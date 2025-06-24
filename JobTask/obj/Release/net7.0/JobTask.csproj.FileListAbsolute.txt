@@ -1,0 +1,7 @@
+C:\.NET\JobTask\JobTask\obj\Release\net7.0\JobTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\.NET\JobTask\JobTask\obj\Release\net7.0\JobTask.AssemblyInfoInputs.cache
+C:\.NET\JobTask\JobTask\obj\Release\net7.0\JobTask.AssemblyInfo.cs
+C:\.NET\JobTask\JobTask\obj\Release\net7.0\JobTask.csproj.CoreCompileInputs.cache
+C:\.NET\JobTask\JobTask\obj\Release\net7.0\JobTask.MvcApplicationPartsAssemblyInfo.cache
+C:\.NET\JobTask\JobTask\obj\Release\net7.0\JobTask.RazorAssemblyInfo.cache
+C:\.NET\JobTask\JobTask\obj\Release\net7.0\JobTask.RazorAssemblyInfo.cs

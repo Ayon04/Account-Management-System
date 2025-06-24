@@ -1,0 +1,26 @@
+﻿@model JobTask.Models.User
+@{
+    ViewData["Title"] = "Viewer Dashboard";
+   
+}
+@{
+    var fullName = Context.Session.GetString("session_UserFullName") ?? "User";
+}
+
+<div class="container mt-5">
+    <h6 class="mb-4 text-center">Viewer Dashboard</h6>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h4 class="mb-4 text-center">Welcome, @fullName!</h4>
+            
+            
+            <div class="d-flex justify-content-center gap-3">
+                <button class="btn btn-primary" onclick="window.location.href='/ViewCA'">View Chart of Accounts</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

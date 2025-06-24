@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "5w+1fJh7mff4ONt0VcKtS64norwQUWmcegDDk0RlBn8kBZQWSHSehsBOkDWyeVK6fDtjmKZTM1HFde2V089YeQ==",
+  "success": true,
+  "projectFilePath": "C:\\.NET\\JobTask\\JobTask\\JobTask.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ayon Ghosh\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Ayon Ghosh\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Ayon Ghosh\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Ayon Ghosh\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Ayon Ghosh\\.nuget\\packages\\system.data.sqlclient\\4.9.0\\system.data.sqlclient.4.9.0.nupkg.sha512"
+  ],
+  "logs": []
+}

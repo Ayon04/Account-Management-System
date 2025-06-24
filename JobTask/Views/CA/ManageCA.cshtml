@@ -1,0 +1,45 @@
+﻿
+@model List<JobTask.Models.CA>
+
+@{
+    ViewData["Title"] = "Manage Chart of Accounts";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Manage Chart of Accounts</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Number</th>
+                <th>Description</th>
+                <th>Account Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Number</td>
+                <td>@item.Description</td>
+                <td>@item.AccountType</td>
+                <td>
+                    <div class="d-flex gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-sm btn-warning">Edit</a>
+
+                        <form asp-action="Delete" asp-route-id="@item.ID" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <!-- Optional: Add a button to insert new account -->
+    <a asp-action="Index" class="btn btn-success mt-3">Add New Account</a>
+</div>

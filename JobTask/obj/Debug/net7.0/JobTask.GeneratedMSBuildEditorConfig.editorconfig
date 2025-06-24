@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\.NET\JobTask\JobTask
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/.NET/JobTask/JobTask/Views/CA/CreateCA.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ0FcQ3JlYXRlQ0EuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/.NET/JobTask/JobTask/Views/CA/ManageCA.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ0FcTWFuYWdlQ0EuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,6 +1,7 @@
 ﻿using JobTask.Models;
 using JobTask.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.SqlClient;
 
 public class CAController : Controller
 {
@@ -20,19 +21,47 @@ public class CAController : Controller
     }
 
     [HttpGet]
-    [Route("ViewCA")]
-    public IActionResult ViewCA()
+    [Route("CreateCA")]
+    public IActionResult CreateCA()
     {
-        var accounts = _caService.GetAllAccounts();
-        return View("ViewCA", accounts);
+        return View("CreateCA");
     }
 
     [HttpPost]
-    public IActionResult Create(CA ca)
+    [Route("CreateCA")]
+    public IActionResult CreateCA(CA ca)
     {
-        _caService.CreateAccount(ca);
-        return RedirectToAction("ManageCA");
+        if (!ModelState.IsValid)
+            return View(ca);
+
+        try
+        {
+            _caService.CreateAccount(ca);
+            return RedirectToAction("ManageCA");
+        }
+        catch (SqlException ex)
+        {
+          
+            if (ex.Number == 2627 || ex.Number == 2601) 
+            {
+                ModelState.AddModelError("Number", "This Account Number already exists.");
+            }
+            else
+            {
+                ModelState.AddModelError("", "An error occurred while saving the data.");
+            }
+
+            return View(ca);
+        }
+        catch (Exception)
+        {
+            ModelState.AddModelError("", "An unexpected error occurred.");
+            return View(ca);
+        }
     }
+
+
+
 
     [HttpPost]
     public IActionResult Delete(int id)

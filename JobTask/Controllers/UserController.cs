@@ -13,32 +13,31 @@ namespace JobTask.Controllers
             _userService = userService;
         }
 
+
         [HttpGet]
+        [Route("Register")]
         public IActionResult Register()
         {
             return View("Register");
         }
 
         [HttpPost]
+        [Route("Register")]
         public IActionResult Register(User user)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(user);
+                _userService.GetAllUsers();
+                ModelState.Clear();
             }
 
-            if (_userService.RegisterUser(user, out string errorMessage))
-            {
-                return RedirectToAction("Login");
-            }
-
-            ModelState.AddModelError(string.Empty, errorMessage);
-            return View(user);
+            ViewBag.Users = _userService.GetAllUsers();
+            return View();
         }
 
 
         [HttpGet]
-        [Route("Login")]
+       
         public IActionResult Login()
         {
             return View("Login");
@@ -70,7 +69,6 @@ namespace JobTask.Controllers
 
 
         [HttpPost]
-        [Route("Login")]
         public IActionResult Login(string email, string password)
         {
             var user = _userService.LoginUser(email, password);

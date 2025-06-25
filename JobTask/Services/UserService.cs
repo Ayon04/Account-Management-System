@@ -84,6 +84,29 @@ namespace JobTask.Services
             }
         }
 
+        public List<User> GetAllUsers()
+        {
+            var users = new List<User>();
+
+            using var conn = new SqlConnection(_connectionString);
+            using var cmd = new SqlCommand("SELECT UserId, FullName, Email, Role FROM [User]", conn);
+            conn.Open();
+
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                users.Add(new User
+                {
+                    UserId = Convert.ToInt32(reader["UserId"]),
+                    FullName = reader["FullName"].ToString(),
+                    Email = reader["Email"].ToString(),
+                    Role = reader["Role"].ToString()
+                });
+            }
+
+            return users;
+        }
+
 
     }
 }

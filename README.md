@@ -33,7 +33,7 @@
 | Login                     | ✅     | ✅          | ✅      |
 | Insert Users              | ✅     | ❌          | ❌      |
 | Chart of Accounts (CRUD)  | ✅     | ✅          | ❌      |
-| Add Journal Voucher       | ✅     | ✅          | ❌      |
+| Add/view Journal Voucher  | ✅     | ✅          | ❌      |
 | View Chart of Accounts    | ✅     | ✅          | ✅      |
 
 ---

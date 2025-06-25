@@ -1,0 +1,93 @@
+﻿@model JobTask.Models.VoucherEntries
+
+@{
+    ViewData["Title"] = "Voucher Entry";
+    var vouchers = ViewBag.Vouchers as List<JobTask.Models.VoucherEntries>;
+}
+
+<h2>Create Voucher Entry</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="VoucherType" class="form-label"></label>
+        <select asp-for="VoucherType" class="form-control">
+            <option value="">Select Voucher Type</option>
+            <option value="Journal">Journal</option>
+            <option value="Payment">Payment</option>
+            <option value="Receipt">Receipt</option>
+        </select>
+        <span asp-validation-for="VoucherType" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="VoucherDate" class="form-label"></label>
+        <input asp-for="VoucherDate" class="form-control" type="date" />
+        <span asp-validation-for="VoucherDate" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ReferenceNo" class="form-label"></label>
+        <input asp-for="ReferenceNo" class="form-control" />
+        <span asp-validation-for="ReferenceNo" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="AccountID" class="form-label"></label>
+        <input asp-for="AccountID" class="form-control" />
+        <span asp-validation-for="AccountID" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DebitAmount" class="form-label"></label>
+        <input asp-for="DebitAmount" class="form-control" />
+        <span asp-validation-for="DebitAmount" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CreditAmount" class="form-label"></label>
+        <input asp-for="CreditAmount" class="form-control" />
+        <span asp-validation-for="CreditAmount" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+    @Html.AntiForgeryToken()
+</form>
+
+@if (vouchers != null && vouchers.Any())
+{
+    <h3 class="mt-5">Inserted Vouchers</h3>
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Voucher Type</th>
+                <th>Date</th>
+                <th>Reference No</th>
+                <th>Account ID</th>
+                <th>Debit Amount</th>
+                <th>Credit Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var v in vouchers)
+            {
+                <tr>
+                    <td>@v.VoucherType</td>
+                    <td>@v.VoucherDate.ToString("yyyy-MM-dd")</td>
+                    <td>@v.ReferenceNo</td>
+                    <td>@v.AccountID</td>
+                    <td>@v.DebitAmount</td>
+                    <td>@v.CreditAmount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="mt-5 text-muted">No vouchers found.</p>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

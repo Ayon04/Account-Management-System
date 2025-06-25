@@ -61,8 +61,43 @@ public class CAController : Controller
     }
 
 
+    [HttpGet]
+    [Route("Edit/{id}")]
+    public IActionResult Edit(int id)
+    {
+        var account = _caService.GetAccountById(id);
+        if (account == null)
+        {
+            return NotFound();
+        }
+        return View("Edit", account);
+    }
+    [HttpPost]
+    [Route("Edit/{id}")]
+    public IActionResult Edit(int id, CA model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View("Edit", model);
+        }
+
+        _caService.UpdateAccount(model); 
+        return RedirectToAction("ManageCA");
+    }
 
 
+
+    [HttpGet]
+    [Route("ChartOfAccounts")]
+    public IActionResult ChartOfAccounts()
+    {
+        var accounts = _caService.GetAllAccounts();
+        return View("ChartOfAccounts", accounts);
+    }
+
+
+
+   
     [HttpPost]
     public IActionResult Delete(int id)
     {

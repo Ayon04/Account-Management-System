@@ -65,12 +65,7 @@ namespace JobTask.Controllers
             return View("ViewerDashboard");
         }
 
-        [HttpGet]
-        [Route("ChartOfAccounts")]
-        public IActionResult ChartOfAccounts()
-        {
-            return View("ChartOfAccounts");
-        }
+        
 
 
 

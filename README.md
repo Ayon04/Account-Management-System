@@ -1,16 +1,50 @@
+<h2>Mini Account Management System</h2>
+## 🛠 Features
 
+### 👤 User Authentication & Roles
+- ✅ Admin, Accountant, and Viewer login
+- ✅ Session-based role handling
+- ✅ Role-based redirection to dashboards
 
+### 🧑‍💼 Admin Dashboard
+- 🔐 Admin login
+- 👥 Insert Users (with role assignment)
+- 📊 Manage Chart of Accounts:
+  - Add Account
+  - Update Account
+  - Delete Account
+- 📘 Add Journal Vouchers (via stored procedure) and view 
 
+### 🧾 Accountant Dashboard
+- 🔐 Accountant login
+- 📊 Manage Chart of Accounts (Add, Update, Delete)
+- 📘 Add Journal Vouchers and view
 
+### 👁 Viewer Dashboard
+- 🔐 Viewer login
+- 📋 View Chart of Accounts (read only)
 
+---
 
+## 📚 Modules & Functionality
 
+| Feature                    | Admin | Accountant | Viewer |
+|---------------------------|:-----:|:----------:|:------:|
+| Login                     | ✅     | ✅          | ✅      |
+| Insert Users              | ✅     | ❌          | ❌      |
+| Chart of Accounts (CRUD)  | ✅     | ✅          | ❌      |
+| Add Journal Voucher       | ✅     | ✅          | ❌      |
+| View Chart of Accounts    | ✅     | ✅          | ✅      |
 
+---
 
+## 🧪 Validations Implemented
 
-
-
-
+- ✅ Required Field Validation 
+- ✅ Duplicate Record Prevention 
+- ✅ Format Validation:
+  - Valid email for users
+  - Numeric fields (Debit/Credit amounts)
 
 ![image](https://github.com/user-attachments/assets/4deb1268-a19a-4dbd-8f4b-ea0a99758ea7)
 ![image](https://github.com/user-attachments/assets/bffc6eae-7b30-447c-ab3c-2c99be36f24b)
